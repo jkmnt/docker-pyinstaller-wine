@@ -1,6 +1,9 @@
 # debian13's wine 10 is ok for pyinstaller, no need to attach winehq repo
-
 FROM debian:trixie-slim
+
+LABEL org.opencontainers.image.source=https://github.com/jkmnt/docker-pyinstaller-wine
+LABEL org.opencontainers.image.description="pyinstaller under wine"
+LABEL org.opencontainers.image.licenses=MIT
 
 ARG NODE_VERSION=24.15.0
 ARG PYINSTALLER_VERSION=6.6.0

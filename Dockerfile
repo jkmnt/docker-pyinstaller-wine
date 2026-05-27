@@ -26,7 +26,7 @@ COPY SHA256SUMS.txt /tmp
 
 RUN <<EOF
 	apt-get update
-	apt-get install -y --no-install-recommends git ca-certificates curl unzip xz-utils nsis wine
+	apt-get install -y --no-install-recommends git ca-certificates curl unzip zip xz-utils nsis wine
 	# Download node and Python for windows
 	curl --fail --show-error --silent --location --compressed --remote-name https://nodejs.org/dist/v${NODE_VERSION}/node-v${NODE_VERSION}-linux-x64.tar.xz
 	curl --fail --show-error --silent --location --compressed --remote-name https://www.python.org/ftp/python/${PYTHON_VERSION}/python-${PYTHON_VERSION}-amd64.zip

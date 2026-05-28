@@ -4,6 +4,7 @@ Make pyinstaller-packed windows binaries on linux. Works by running pyinstaller 
 
 Tools:
 
+- python 3.12
 - git
 - node 24.15.0
 - wine 10

@@ -1,5 +1,5 @@
 # debian13's wine 10 is ok for pyinstaller, no need to attach winehq repo
-FROM debian:trixie-slim
+FROM python:3.12-slim-trixie
 
 LABEL org.opencontainers.image.source=https://github.com/jkmnt/docker-pyinstaller-wine
 LABEL org.opencontainers.image.description="pyinstaller under wine"
@@ -15,9 +15,6 @@ ENV WINEPREFIX=/opt/wineprefix
 ENV WINEPATH="c:\\Python\\;C:\\Python\\Scripts\\"
 ENV XDG_RUNTIME_DIR=/tmp/xdg_runtime_dir
 
-# # https://github.com/nodejs/docker-node/blob/58635ae7aaeab55a5c036b59e8ca93d864119cbe/24/bookworm-slim/Dockerfile
-# RUN groupadd --gid 1000 node \
-#   && useradd --uid 1000 --gid node --shell /bin/bash --create-home node
 
 WORKDIR /tmp
 
@@ -51,3 +48,5 @@ RUN <<EOF
 	wine pip install pyinstaller==${PYINSTALLER_VERSION}; wineserver -w
 	rm -rf /tmp/*
 EOF
+
+WORKDIR /~

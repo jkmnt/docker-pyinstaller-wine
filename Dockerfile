@@ -49,6 +49,6 @@ RUN <<EOF
 	rm -rf /tmp/*
 EOF
 
-WORKDIR /~
+WORKDIR /home
 
 CMD ["/bin/bash"]

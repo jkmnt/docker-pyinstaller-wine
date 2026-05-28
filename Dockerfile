@@ -50,3 +50,5 @@ RUN <<EOF
 EOF
 
 WORKDIR /~
+
+CMD ["/bin/bash"]

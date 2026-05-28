@@ -44,8 +44,10 @@ EOF
 
 # NOTE: this pip upgrade (if successful) also creates missing pip.exe
 RUN <<EOF
-	wine python -m pip install --upgrade pip; wineserver -w
-	wine pip install pyinstaller==${PYINSTALLER_VERSION}; wineserver -w
+	wine python -m pip install --upgrade pip
+	wineserver -w
+	wine pip install pyinstaller==${PYINSTALLER_VERSION}
+	wineserver -w
 	rm -rf /tmp/*
 EOF
 
